@@ -2,6 +2,8 @@
 
 *A Node.js client for creating projects and executing code on [Repl.it](https://repl.it/).*
 
+[![NPM Version](https://img.shields.io/npm/v/repl.it-api.svg?style=for-the-badge)](https://npm.im/repl.it-api)
+
 ## Installation
 
 With Yarn:
