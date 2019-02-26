@@ -84,7 +84,7 @@ module.exports = class {
   }
 
   run(listeners = {}) {
-    const { output, timedOut, listen, installStart, installOutput, installDone } = listeners
+    const { output, timedOut, listen, installStart, installOutput, installEnd } = listeners
     let alreadyLeft = false
     let timeout
 
@@ -115,7 +115,7 @@ module.exports = class {
           installOutput(data)
         } else if (command === 'event:packageInstallEnd') {
           setTheTimeout()
-          installDone && installDone()
+          installEnd && installEnd()
         } else if (output && command === 'output') {
           output(data)
         } else if (command === 'result' && !alreadyLeft) {
