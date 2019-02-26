@@ -1,0 +1,19 @@
+{
+  "name": "repl.it-api",
+  "version": "0.0.1",
+  "description": "A Node.js client for creating projects and executing code on Repl.it.",
+  "main": "lib.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arch-lord/repl.it-api.git"
+  },
+  "author": "Felix Mattick <felix.mattick@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "fetch-cookie": "^0.7.2",
+    "node-fetch": "^2.3.0",
+    "tough-cookie": "^3.0.1",
+    "websocket": "^1.0.28"
+  }
+}
