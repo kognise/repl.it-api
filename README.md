@@ -89,6 +89,16 @@ const result = await client.run({
 
 `client#run` will also resolve with the output of the program which will most likely be `'undefined'`. Also, note that when the project either times out or listens on a port it resolves immediately.
 
+### Log In
+
+If you want, you can create repls under your account by logging in. You have to get the cookie `connect.sid` from your browser, and save that somewhere super safe. **Don't store it anywhere public, including Git!**
+
+```javascript
+await client.login(sid)
+```
+
+`client#login` takes one argument: a string which should be the `connect.sid` cookie's value.
+
 ### Close the Connection
 
 We **super ultra very much recommend** doing this before exiting your program. It's as simple as the below code.

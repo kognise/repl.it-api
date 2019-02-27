@@ -1,4 +1,4 @@
-const { CookieJar } = require('tough-cookie')
+const { CookieJar, Cookie } = require('tough-cookie')
 const nodeFetch = require('node-fetch')
 const fetchCookie = require('fetch-cookie')
 const WebSocketClient = require('websocket').client
@@ -13,7 +13,8 @@ const headers = {
 module.exports = class {
   constructor(timeout = 5000) {
     this.got = {}
-    this.fetch = fetchCookie(nodeFetch, new CookieJar())
+    this.jar = new CookieJar()
+    this.fetch = fetchCookie(nodeFetch, this.jar)
     this.timeout = timeout
   }
 
@@ -37,6 +38,21 @@ module.exports = class {
       }),
       headers
     }).then(parseJson)
+  }
+
+  login(sid) {
+    const cookie = Cookie.fromJSON({
+      key: 'connect.sid',
+      value: sid,
+      domain: 'repl.it',
+      path: '/'
+    })
+    return new Promise((resolve, reject) => {
+      this.jar.setCookie(cookie, 'https://repl.it/', (error) => {
+        if (error) return reject(error)
+        resolve()
+      })
+    })
   }
 
   async connect() {
