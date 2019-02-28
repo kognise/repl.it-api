@@ -44,6 +44,18 @@ await client.connect()
 
 `client#create` takes one argument: a string that should be a valid language. The default is `nodejs`.
 
+### Load from a Path 
+
+Instead of creating a new project, you may want to load an existing project. Currently we support loading from a path like `@User/Repl-Name`.
+
+```javascript
+await client.loadFromPath('@User/Repl-Name')
+```
+
+`client#loadFromPath` takes one argument: a string that should be the file path.
+
+Also note that if you do not have write access to that project, you will only be able to read from files.
+
 ### Write to a File
 
 ```javascript
