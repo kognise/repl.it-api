@@ -30,14 +30,23 @@ module.exports = class {
     this.got.language = language
     this.got.mainFile = fileNames[0]
 
-    this.got.token = await this.fetch(`https://repl.it/data/repls/${id}/gen_repl_token`, {
+    const potentialToken = await this.fetch(`https://repl.it/data/repls/${id}/gen_repl_token`, {
       method: 'POST',
       body: JSON.stringify({
         liveCodingToken: null,
         polygott: false
       }),
       headers
-    }).then(parseJson, url)
+    }).then(parseJson)
+    if (potentialToken.message) {
+      if (potentialToken.name) {
+        throw new Error(`${potentialToken.name}: ${potentialToken.message}`)
+      } else {
+        throw new Error(potentialToken.message)
+      }
+    } else {
+      this.got.token = potentialToken
+    }
   }
 
   async loadFromPath(path) {
