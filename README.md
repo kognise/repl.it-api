@@ -63,6 +63,46 @@ await client.writeMain('console.log("Hello from the main file")')
 
 `client#writeMain` only takes one argument, which is the same as the second argument to `client#write`.
 
+### Read from a File
+
+```javascript
+const content = await client.read('file.js')
+```
+
+You can also read from the main file.
+
+```javascript
+const content = await client.readMain()
+```
+
+`client#read` takes one argument: a string that should be the filename.
+
+### List All Files
+
+You can also list all the files in a project. **Note that it'll return a flat array in a weird format!** Due to limitations of Google Cloud Storage, the file heirarchy is flattened.
+
+Say the file heirarchy *seems* like this:
+
+```
+/
+|-- index.js
+|-- lib/
+|   |-- blah.js
+|   |-- other.js
+```
+
+This is how it'll actually be stored:
+
+```javascript
+[ 'index.js', 'lib/blah.js', 'lib/other.js' ]
+```
+
+Without further ado, below is the usage example.
+
+```javascript
+const files = await client.list()
+```
+
 ### Run the Project
 
 Now you probably want to actually run your project!

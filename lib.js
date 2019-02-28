@@ -40,6 +40,24 @@ module.exports = class {
     }).then(parseJson)
   }
 
+  async loadFromPath(path) {
+    const { id, url, fileNames, slug, language } = await this.fetch(`https://repl.it/data/repls/${path}`).then(parseJson)
+    this.got.id = id
+    this.got.url = url
+    this.got.slug = slug
+    this.got.language = language
+    this.got.mainFile = fileNames[0]
+
+    this.got.token = await this.fetch(`https://repl.it/data/repls/${id}/gen_repl_token`, {
+      method: 'POST',
+      body: JSON.stringify({
+        liveCodingToken: null,
+        polygott: false
+      }),
+      headers
+    }).then(parseJson)
+  }
+
   login(sid) {
     const cookie = Cookie.fromJSON({
       key: 'connect.sid',
@@ -97,6 +115,24 @@ module.exports = class {
 
   writeMain(content) {
     return this.write(this.got.mainFile, content)
+  }
+
+  async read(name) {
+    const json = await this.fetch(`https://repl.it/data/repls/signed_urls/${this.got.id}/${encodeURIComponent(name)}?d=${Date.now()}`).then(parseJson)
+    const readUrl = json.urls_by_action.read
+    const content = await this.fetch(readUrl, {
+      method: 'GET'
+    }).then((response) => response.text())
+    return content
+  }
+
+  readMain() {
+    return this.read(this.got.mainFile)
+  }
+
+  async list() {
+    const { fileNames } = await this.fetch(`https://repl.it/data/repls${this.got.url}`).then(parseJson)
+    return fileNames
   }
 
   run(listeners = {}) {
