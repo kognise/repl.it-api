@@ -74,3 +74,7 @@ typings/
 
 # FuseBox cache
 .fusebox/
+
+# Example code
+example.js
+example.js
