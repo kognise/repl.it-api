@@ -1,6 +1,6 @@
 {
   "name": "repl.it-api",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A Node.js client for creating projects and executing code on Repl.it.",
   "main": "lib.js",
   "repository": {
