@@ -22,6 +22,8 @@ $ npm install repl.it-api
 
 All of the asyncronous code in the documentation below will be expressed async/await syntax, it works equally well with Promises.
 
+**Due to an incident that involved API abuse, anonymous repls now require a capture to be managed. I am currently working with @amasad (the owner of Repl.it) on making that work with this API but until then you must log in.**
+
 ### Instantiate a Client
 
 Before doing anything else you have to import `repl.it-api` and create a Repl.it client.
@@ -37,14 +39,16 @@ const client = new ReplitClient()
 
 You have to create a project, and connect to Repl.it's websocket to execute code and write files in.
 
+You don't have to perform the connection for web repls, although it won't throw an error.
+
 ```javascript
 await client.create()
 await client.connect()
 ```
 
-`client#create` takes one argument: a string that should be a valid language. The default is `nodejs`.
+`client#create` takes one argument: a string that should be a valid language. The default is `nodejs`. See a full list of languages [here](https://github.com/arch-lord/repl.it-api/blob/master/LANGUAGES.md)!
 
-### Load from a Path 
+### Load from a Path
 
 Instead of creating a new project, you may want to load an existing project. Currently we support loading from a path like `@User/Repl-Name`.
 
@@ -154,6 +158,8 @@ await client.login(sid)
 ### Close the Connection
 
 We **super ultra very much recommend** doing this before exiting your program. It's as simple as the below code.
+
+You don't need to do this for web repls.
 
 ```javascript
 await client.close()

@@ -1,0 +1,52 @@
+# Supported Languages
+
+*This file was generated automatically by `languages.js`.*
+
+ - HTML/JS/CSS: `html`
+ - Nodejs: `nodejs`
+ - TypeScript: `typescript`
+ - OCaml: `ocaml`
+ - Julia: `julia`
+ - Elixir: `elixir`
+ - Jest: `jest`
+ - PHP: `php`
+ - React Typescript: `reactts`
+ - React Reason: `reactre`
+ - Erlang: `erlang`
+ - polygott: `polygott`
+ - F#: `fsharp`
+ - C#: `csharp`
+ - Clojure: `clojure`
+ - Quil: `quil`
+ - Python 2.7: `python`
+ - Reason NodeJs: `reason_nodejs`
+ - Kotlin (beta): `kotlin`
+ - Enzyme: `enzyme`
+ - C++11: `cpp11`
+ - Nim: `nim`
+ - Python: `python3`
+ - Express: `express`
+ - Java: `java`
+ - GatsbyJS 2.0: `gatsbyjsv2`
+ - R: `rlang`
+ - Tcl: `tcl`
+ - Perl 6: `perl6`
+ - React: `reactjs`
+ - Next.js: `nextjs`
+ - Rust: `rust`
+ - React Native: `react_native`
+ - Flow: `flow`
+ - Crystal: `crystal`
+ - C++: `cpp`
+ - Django: `django`
+ - Dart: `dart`
+ - Go: `go`
+ - Ruby: `ruby`
+ - Sinatra: `sinatra`
+ - bash: `bash`
+ - C: `c`
+ - GatsbyJS: `gatsbyjs`
+ - Ruby on Rails: `rails`
+ - Swift: `swift`
+ - Lua: `lua`
+ - Haskell: `haskell`

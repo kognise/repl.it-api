@@ -6,7 +6,7 @@ const WebSocketClient = require('websocket').client
 const parseJson = (response) => response.json()
 const sendJson = (connection, json) => connection.sendUTF(JSON.stringify(json))
 const headers = {
-  'Referer': 'https://repl.it/languages/nodejs',
+  'Referer': 'https://repl.it/',
   'Content-Type': 'application/json'
 }
 
@@ -37,7 +37,7 @@ module.exports = class {
         polygott: false
       }),
       headers
-    }).then(parseJson)
+    }).then(parseJson, url)
   }
 
   async loadFromPath(path) {
@@ -47,7 +47,6 @@ module.exports = class {
     this.got.slug = slug
     this.got.language = language
     this.got.mainFile = fileNames[0]
-
     this.got.token = await this.fetch(`https://repl.it/data/repls/${id}/gen_repl_token`, {
       method: 'POST',
       body: JSON.stringify({
@@ -74,6 +73,8 @@ module.exports = class {
   }
 
   async connect() {
+    if (this.got.language === 'html') return Promise.resolve()
+
     const connection = await new Promise((resolve, reject) => {
       const client = new WebSocketClient()
   
@@ -87,16 +88,19 @@ module.exports = class {
   
       client.connect('wss://eval.repl.it/ws')
     })
-    await new Promise((resolve) => {
+    await new Promise((resolve, reject) => {
       sendJson(connection, {
         command: 'auth',
         data: this.got.token
       })
       connection.on('message', ({ type, utf8Data }) => {
         if (type !== 'utf8') return
-        const { command } = JSON.parse(utf8Data)
+        const { command, data } = JSON.parse(utf8Data)
+        if (command === 'error') reject(new Error(data))
         if (command === 'ready') resolve()
       })
+
+      connection.on('close', () => reject(new Error('Closed too early')))
     })
     this.got.connection = connection
   }
@@ -135,8 +139,16 @@ module.exports = class {
     return fileNames
   }
 
-  run(listeners = {}) {
+  async run(listeners = {}) {
     const { output, timedOut, listen, installStart, installOutput, installEnd } = listeners
+
+    if (this.got.language === 'html') {
+      const path = this.got.url.replace(/^\/@/, '/')
+      await this.fetch(`https://replbox.repl.it/data/web_hosting_1${path}`)
+      listen && listen(80)
+      return Promise.resolve()
+    }
+
     let alreadyLeft = false
     let timeout
 
@@ -184,6 +196,7 @@ module.exports = class {
   }
 
   close() {
+    if (this.got.language === 'html') return Promise.resolve()
     return new Promise((resolve) => {
       this.got.connection.close()
       this.got.connection.on('close', () => {
