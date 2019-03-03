@@ -5,9 +5,9 @@
   "main": "lib.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arch-lord/repl.it-api.git"
+    "url": "https://github.com/kognise/repl.it-api.git"
   },
-  "author": "Felix Mattick <felix.mattick@gmail.com>",
+  "author": "Kognise",
   "license": "MIT",
   "private": false,
   "dependencies": {
