@@ -3,50 +3,56 @@
 *This file was generated automatically by `languages.js`.*
 
  - HTML/JS/CSS: `html`
- - Nodejs: `nodejs`
- - TypeScript: `typescript`
- - OCaml: `ocaml`
- - Julia: `julia`
- - Elixir: `elixir`
+ - Swift: `swift`
+ - Reason NodeJs: `reason_nodejs`
  - Jest: `jest`
- - PHP: `php`
- - React Typescript: `reactts`
- - React Reason: `reactre`
- - Erlang: `erlang`
+ - C: `c`
+ - C++11: `cpp11`
+ - React: `reactjs`
+ - Enzyme: `enzyme`
  - polygott: `polygott`
- - F#: `fsharp`
- - C#: `csharp`
- - Clojure: `clojure`
+ - Haskell: `haskell`
+ - Dart: `dart`
+ - Erlang: `erlang`
+ - Java: `java`
+ - Reason: `reason`
+ - Nodejs: `nodejs`
+ - Next.js: `nextjs`
  - Quil: `quil`
  - Python 2.7: `python`
- - Reason NodeJs: `reason_nodejs`
- - Kotlin (beta): `kotlin`
- - Enzyme: `enzyme`
- - C++11: `cpp11`
- - Nim: `nim`
- - Python: `python3`
- - Express: `express`
- - Java: `java`
- - GatsbyJS 2.0: `gatsbyjsv2`
- - R: `rlang`
- - Tcl: `tcl`
- - Perl 6: `perl6`
- - React: `reactjs`
- - Next.js: `nextjs`
- - Rust: `rust`
- - React Native: `react_native`
  - Flow: `flow`
  - Crystal: `crystal`
+ - R: `rlang`
  - C++: `cpp`
+ - Tcl: `tcl`
  - Django: `django`
- - Dart: `dart`
  - Go: `go`
- - Ruby: `ruby`
+ - Lua: `lua`
+ - Nim: `nim`
+ - React Native: `react_native`
+ - Express: `express`
+ - Elixir: `elixir`
+ - TypeScript: `typescript`
+ - Ruby on Rails: `rails`
+ - Pygame: `pygame`
+ - PHP: `php`
+ - Clojure: `clojure`
+ - Python: `python3`
+ - OCaml: `ocaml`
  - Sinatra: `sinatra`
  - bash: `bash`
- - C: `c`
+ - F#: `fsharp`
+ - React Reason: `reactre`
+ - Perl 6: `perl6`
+ - C#: `csharp`
+ - React Typescript: `reactts`
+ - Rust: `rust`
+ - Julia: `julia`
+ - GatsbyJS 2.0: `gatsbyjsv2`
  - GatsbyJS: `gatsbyjs`
- - Ruby on Rails: `rails`
- - Swift: `swift`
- - Lua: `lua`
- - Haskell: `haskell`
+ - Kotlin (beta): `kotlin`
+ - Ruby: `ruby`
+ - Love2D: `love2d`
+ - Love2D: `Tkinter`
+ - Tkinter: `tkinter`
+ - Java Swing: `java_swing`
