@@ -46,7 +46,7 @@ await client.create()
 await client.connect()
 ```
 
-`client#create` takes one argument: a string that should be a valid language. The default is `nodejs`. See a full list of languages [here](https://github.com/arch-lord/repl.it-api/blob/master/LANGUAGES.md)!
+`client#create` takes one argument: a string that should be a valid language. The default is `nodejs`. See a full list of languages [here](https://github.com/kognise/repl.it-api/blob/master/LANGUAGES.md)!
 
 ### Load from a Path
 

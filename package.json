@@ -1,13 +1,13 @@
 {
   "name": "repl.it-api",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "A Node.js client for creating projects and executing code on Repl.it.",
   "main": "lib.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arch-lord/repl.it-api.git"
+    "url": "https://github.com/kognise/repl.it-api.git"
   },
-  "author": "Felix Mattick <felix.mattick@gmail.com>",
+  "author": "Kognise",
   "license": "MIT",
   "private": false,
   "dependencies": {
