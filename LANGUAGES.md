@@ -4,55 +4,55 @@
 
  - HTML/JS/CSS: `html`
  - Swift: `swift`
- - Reason NodeJs: `reason_nodejs`
- - Jest: `jest`
- - C: `c`
- - C++11: `cpp11`
+ - C#: `csharp`
+ - GatsbyJS 2.0: `gatsbyjsv2`
  - React: `reactjs`
- - Enzyme: `enzyme`
- - polygott: `polygott`
- - Haskell: `haskell`
- - Dart: `dart`
- - Erlang: `erlang`
- - Java: `java`
+ - Love2D: `love2d`
+ - React Typescript: `reactts`
  - Reason: `reason`
+ - Nim: `nim`
+ - Python: `python3`
+ - bash: `bash`
+ - Tkinter: `tkinter`
+ - C: `c`
+ - Kotlin (beta): `kotlin`
+ - C++11: `cpp11`
  - Nodejs: `nodejs`
- - Next.js: `nextjs`
+ - Rust: `rust`
+ - Haskell: `haskell`
+ - Crystal: `crystal`
+ - Jest: `jest`
+ - R: `rlang`
+ - Lua: `lua`
+ - OCaml: `ocaml`
+ - polygott: `polygott`
+ - Erlang: `erlang`
+ - Reason NodeJs: `reason_nodejs`
+ - TypeScript: `typescript`
+ - Enzyme: `enzyme`
+ - Java Swing: `java_swing`
+ - Ruby on Rails: `rails`
+ - Dart: `dart`
+ - Elixir: `elixir`
+ - C++: `cpp`
+ - F#: `fsharp`
+ - Perl 6: `perl6`
+ - Julia: `julia`
+ - Express: `express`
+ - Java: `java`
+ - Go: `go`
+ - Pygame: `pygame`
+ - Flow: `flow`
+ - Ruby: `ruby`
+ - React Native: `react_native`
+ - React Reason: `reactre`
  - Quil: `quil`
  - Python 2.7: `python`
- - Flow: `flow`
- - Crystal: `crystal`
- - R: `rlang`
- - C++: `cpp`
+ - GatsbyJS: `gatsbyjs`
+ - PHP: `php`
  - Tcl: `tcl`
  - Django: `django`
- - Go: `go`
- - Lua: `lua`
- - Nim: `nim`
- - React Native: `react_native`
- - Express: `express`
- - Elixir: `elixir`
- - TypeScript: `typescript`
- - Ruby on Rails: `rails`
- - Pygame: `pygame`
- - PHP: `php`
  - Clojure: `clojure`
- - Python: `python3`
- - OCaml: `ocaml`
+ - Next.js: `nextjs`
  - Sinatra: `sinatra`
- - bash: `bash`
- - F#: `fsharp`
- - React Reason: `reactre`
- - Perl 6: `perl6`
- - C#: `csharp`
- - React Typescript: `reactts`
- - Rust: `rust`
- - Julia: `julia`
- - GatsbyJS 2.0: `gatsbyjsv2`
- - GatsbyJS: `gatsbyjs`
- - Kotlin (beta): `kotlin`
- - Ruby: `ruby`
- - Love2D: `love2d`
- - Love2D: `Tkinter`
- - Tkinter: `tkinter`
- - Java Swing: `java_swing`
+ - Nodejs: `nodejs_prybar`
