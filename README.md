@@ -34,7 +34,11 @@ const client = new ReplitClient()
 ```
 
 `ReplitClient`'s constructor takes one argument: a number (in milliseconds) which is the timeout for code execution. The default is `3000`.
-
+### Login
+To login to repl.it with the api run the piece of code under this paragraph replace username and password with your usernmae and password
+```javascript
+await client.login("username","password")
+```
 ### Create a Project & Connect
 
 You have to create a project, and connect to Repl.it's websocket to execute code and write files in.
