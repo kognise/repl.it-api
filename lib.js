@@ -18,11 +18,15 @@ module.exports = class {
     this.timeout = timeout
   }
   async login(username,password){
-    await this.fetch('https://repl.it/login',{method: 'POST',body:{username,password}}).then((response)=>{
+    await this.fetch('https://repl.it/login',{
+      method: 'POST', 
+      body:  { username, password },
+      headers
+    }).then((response)=>{
       response.json()
-      if(response.username == username){
-        this.cookies = response.headers.get("set-cookie")
-        headers.Cookie = response.headers.get("set-cookie")
+      if(response.username === username){
+        this.cookies = response.headers.get('set-cookie')
+        headers.Cookie = response.headers.get('set-cookie')
       }
     })
   }
