@@ -1,3 +1,7 @@
+> 🚩 **This project is archived!** 🚩
+> 
+> *Repl.it's API has undergone many changes that have made packages like this not that practical, and furthermore I don't really have enough bandwidth to maintain this.*
+
 # Repl.it API
 
 *A Node.js client for creating projects and executing code on [Repl.it](https://repl.it/).*
