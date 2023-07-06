@@ -17,7 +17,19 @@ module.exports = class {
     this.fetch = fetchCookie(nodeFetch, this.jar)
     this.timeout = timeout
   }
-
+  async login(username,password){
+    await this.fetch('https://repl.it/login',{
+      method: 'POST', 
+      body:  { username, password },
+      headers
+    }).then((response)=>{
+      response.json()
+      if(response.username === username){
+        this.cookies = response.headers.get('set-cookie')
+        headers.Cookie = response.headers.get('set-cookie')
+      }
+    })
+  }
   async create(language = 'nodejs') {
     const { id, url, fileNames, slug } = await this.fetch('https://repl.it/data/repls/new', {
       method: 'POST',
